@@ -661,7 +661,7 @@ namespace openeet_lite
         public string SendRequest(string requestBody, string serviceUrl)
         {
             //enable minimal versions of TLS required by EET
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls13 | SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11;
             byte[] content = Encoding.UTF8.GetBytes(requestBody);
             WebRequest req = WebRequest.Create(serviceUrl);
             req.ContentType = "text/xml;charset=UTF-8";
